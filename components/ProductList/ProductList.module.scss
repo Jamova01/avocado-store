@@ -1,0 +1,6 @@
+.productList {
+  display: grid;
+  place-items: center;
+  grid-template-columns: auto auto;
+  gap: 20px;
+}
