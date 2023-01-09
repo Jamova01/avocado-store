@@ -1,8 +1,18 @@
-import { useRouter } from "next/router";
+// React
 import { useEffect, useState } from "react";
-import styles from "./styles.module.scss";
+
+// Next
+import { useRouter } from "next/router";
+
+// Icons
 import { MdAddShoppingCart } from "react-icons/md";
-import ProductDetailCard from "../../components/ProducDetailCard/ProductDetailCard";
+
+// Components
+import ProductDetailCard from "@components/ProducDetailCard/ProductDetailCard";
+import AttributeTable from "@components/AttributeTable/AttributeTable";
+
+// Styles
+import styles from "./styles.module.scss";
 
 const ProductDetail = () => {
   const [product, setProduct] = useState<TProduct>();
@@ -40,6 +50,7 @@ const ProductDetail = () => {
           type="number"
           name=""
           id=""
+          value={0}
           min="1"
           step="1"
           placeholder="Quantity"
@@ -49,6 +60,12 @@ const ProductDetail = () => {
           <MdAddShoppingCart /> Add to Cart
         </button>
       </div>
+      <AttributeTable
+        shape={product?.attributes.shape}
+        hardiness={product?.attributes.hardiness}
+        taste={product?.attributes.taste}
+        description={product?.attributes.taste}
+      />
     </div>
   );
 };
